@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JavaRestAlgafoodApplication {
+public class JavaRestIfoodApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaRestAlgafoodApplication.class, args);
+		SpringApplication.run(JavaRestIfoodApplication.class, args);
 	}
 
 }
