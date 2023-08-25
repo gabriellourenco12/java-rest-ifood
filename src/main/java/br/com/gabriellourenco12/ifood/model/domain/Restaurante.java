@@ -1,8 +1,6 @@
 package br.com.gabriellourenco12.ifood.model.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,11 +10,14 @@ import java.math.BigDecimal;
 public class Restaurante {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     private String nome;
 
-    @Column(name = "taxa_frete")
     private BigDecimal taxaFrete;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cozinha")
+    private Cozinha cozinha;
 }
